@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+.ws-chatmail-window *, .ws-chatmail-button *,.ws-chatmail-window *:focus, .ws-chatmail-button *:focus, .ws-chatmail-window *:active, .ws-chatmail-button *:active, .ws-chatmail-window *:hover, .ws-chatmail-button *:hover   {
+    border: none;
+    outline: 0;
+    text-decoration: none;
+    color: black;
+    direction: ltr;
+}
+
+.ws-chatmail-window h1,
+.ws-chatmail-window h2,
+.ws-chatmail-window h3,
+.ws-chatmail-window h4,
+.ws-chatmail-window h5,
+.ws-chatmail-window h6,
+.ws-chatmail-window a,
+.ws-chatmail-window p {
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.ws-chatmail-button {
+    border: none;
+    padding: 0;
+    width: 54px;
+    height: 54px;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999999;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    background-image: url('/wp-content/plugins/chatmail/images/button-bubble.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+    direction: ltr;
+}
+
+.ws-chatmail-button:focus {
+    background-image: url('/wp-content/plugins/chatmail/images/button-bubble.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+}
+
+.ws-chatmail-button:hover {
+    background-image: url('/wp-content/plugins/chatmail/images/button-bubble.png');
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ws-chatmail-button.window-open {
+    background-image: url('/wp-content/plugins/chatmail/images/bubble-close.png');
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: 11px center;
+}
+
+.ws-chatmail-chat-window-avatar {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.ws-chatmail-chat-window-header {
+    background-color: #f4f7f9;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 3px 3px 0 0;
+}
+
+
+
+.ws-chatmail-chat-window.ws-chatmail-open {
+    overflow: visible;
+}
+
+.ws-chatmail-chat-window:after {
+    display: block;
+    content: "";
+    background: url(/wp-content/plugins/chatmail/images/ws-arrows.png);
+    background-position: 0;
+    height: 17px;
+    width: 30px;
+    position: absolute;
+    right: 12px;
+    bottom: -11px;
+    background-size: 60px;
+}
+
+.ws-chatmail-bubble-container {
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: left;
+    width: 100%;
+}
+
+.ws-chatmail-user-bubble .ws-arrow {
+    background: none repeat scroll 0 0 transparent;
+    border: 5px solid transparent;
+    bottom: auto;
+    height: 0px;
+    left: auto;
+    position: absolute;
+    right: -10px;
+    bottom: 15px;
+    vertical-align: top;
+    width: 0;
+}
+
+
+.ws-chatmail-button-bubble {
+    width: 36px;
+    margin-right: -3px;
+}
+
+.ws-chatmail-chat-window-text {
+    max-width: 200px;
+}
+
+.ws-chatmail-admin-name {
+    font-family:"Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    color: #272727;
+}
+
+.ws-chatmail-admin-message {
+    font-size: 12px;
+    line-height: 16px;
+    color: #bbbbbb;
+    margin-bottom: 0;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.ws-chatmail-window-body {
+    padding: 13px;
+}
+
+.ws-chatmail-message {
+    resize: none;
+    border: none;
+    font-size: 12px;
+    color: #bbbbbb;
+    padding: 0;
+    width: 100%;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.ws-chatmail-message:focus {
+    outline: none;
+}
+
+.ws-chatmail-credits {
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    font-size: 10px;
+    color: #bbb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 118px;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.ws-chatmail-logo {
+    width: 50px;
+    margin-bottom: -5px;
+}
+
+#ws-chatmail-form-submit {
+    opacity: 0;
+    background: transparent;
+    color: black;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+    position: absolute;
+    right: 9px;
+    bottom: 7px;
+    border: 0;
+    outline: none;
+    width: 108px;
+}
+
+#ws-chatmail-form-submit:focus {
+    outline: none;
+}
+
+#ws-chatmail-form-submit img {
+    height: 18px;
+}
+
+.ws-chatmail-user-bubble {
+    padding: 12px 10px;
+    border-radius: 5px;
+    float: right;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.ws-chatmail-user-bubble p {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.ws-chatmail-admin-bubble {
+    background-color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    float: right;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-left: 50px;
+}
+
+.ws-chatmail-admin-bubble p {
+    margin-bottom: 0;
+    color: #212121;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.ws-chatmail-admin-bubble .ws-arrow {
+    display: block;
+    content: "";
+    background: url(/wp-content/plugins/chatmail/images/ws-arrows.png);
+    background-position: -31px;
+    height: 15px;
+    width: 21px;
+    position: absolute;
+    left: 41px;
+    bottom: 17px;
+    background-size: 60px;
+}
+
+.ws-admin-response {
+    display: none;
+}
+
+.ws-chatmail-admin-bubble .ws-chatmail-chat-avatar {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    top: 5px;
+}
+
+
+.ws-chatmail-email-form {
+    display: flex;
+    margin-top: 4px;
+}
+
+.ws-chatmail-email-form input[type='text'] {
+    padding: 2px 5px;
+    font-size: 13px;
+    border-radius: 3px 0 0 3px;
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    border: 1px solid #bbb;
+    width: 225px;
+    display: block;
+    height: 34px;
+    display: block;
+    box-shadow: none;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.ws-chatmail-email-form input[type='text']:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.ws-chatmail-email-form button[type='submit'] {
+    width: 30px;
+    border-radius: 0px 3px 3px 0;
+    border: none;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.ws-chatmail-email-form button[type='submit']:focus {
+    outline: none;
+}
+
+
+.ws-chatmail-email-form button[type='submit'] img {
+    width: 100%;
+}
+
+.ws-admin-success-response, .ws-admin-error-response {
+    display: none;
+}
+
+p.ws-chatmail-error {
+    color: #dc434e;
+    margin-top: 5px;
+    font-family: "Nunito","Open Sans",Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+
+.ws-chatmail-chat-window {
+    background-color: #fff;
+    height: 200px;
+    width: 350px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99999;
+    bottom: 40px;
+    opacity: 0;
+    display: none;
+    right: 24px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -webkit-transition: height 0.25s ease-in-out;
+    -moz-transition: height 0.25s ease-in-out;
+    -ms-transition: height 0.25s ease-in-out;
+    -o-transition: height 0.25s ease-in-out;
+    transition: height 0.25s ease-in-out;
+    direction: ltr;
+}
+
+.ws-chatmail-closing {
+    animation: 0.3s cubic-bezier(.25,.8,.25,1) ws-chat-window-shrink;
+}
+
+.ws-chatmail-openning {
+    animation: 0.3s cubic-bezier(.25,.8,.25,1) ws-chat-window-grow;
+}
+
+.ws-chatmail-chat-window.ws-chatmail-open {
+    bottom: 97px;
+    opacity: 1;
+}
+
+@-webkit-keyframes ws-chat-window-shrink {
+    0% {
+        bottom: 97px;
+        opacity: 1;
+    }
+    100% {
+        bottom: 40px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes ws-chat-window-grow {
+    0% {
+        bottom: 40px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 97px;
+        opacity: 1;
+    }
+}
